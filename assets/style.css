@@ -1,0 +1,26 @@
+*{
+    background-color: black; 
+    color: white;   
+}
+
+.timer{
+    text-align: right;
+    margin-right: 15vh;
+    margin-left: 15vh;
+}
+
+.viewHighschores{
+    margin-top: 5vh;
+    margin-left: 15vh;
+    margin-right: 15vh;
+}
+
+main{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.startBtn{
+    margin-top: 10vh;
+}
