@@ -35,6 +35,24 @@ let questions = [
         choiceB: "Java Shell",
         choiceC: "Java Script",
         correct: "C"
+    }, {
+        question: "Which of the following keywords is used to define a variable in Javascript?",
+        choiceA: "var",
+        choiceB: "let",
+        choiceC: "Both Options Are True",
+        correct: "C"
+    }, {
+        question: "Which of the following methods is used to access HTML elements using Javascript?",
+        choiceA: "getElementById()",
+        choiceB: "getHtmlById()",
+        choiceC: "Both Options Are True",
+        correct: "A"
+    }, {
+        question: "How to stop an interval timer in Javascript?",
+        choiceA: "clearTime()",
+        choiceB: "clearInterval()",
+        choiceC: "clearDocumentTime()",
+        correct: "B"
     }
 ];
 
@@ -47,9 +65,9 @@ let lastQues = questions.length - 1;
 function setQuestion() {
     let q = questions[quesLeft];
     questionChoice.innerHTML = "<h2>" + q.question + "</h2>";
-    choiceA.innerHTML = "1. "+ q.choiceA;
-    choiceB.innerHTML = "2. "+ q.choiceB;
-    choiceC.innerHTML = "3. "+ q.choiceC;
+    choiceA.innerHTML = "1. " + q.choiceA;
+    choiceB.innerHTML = "2. " + q.choiceB;
+    choiceC.innerHTML = "3. " + q.choiceC;
 }
 
 function answerIsCorrect() {
@@ -72,9 +90,12 @@ function checkAnswer(answer) {
         totalScores.innerHTML = "Your Score: " + score;
     } else {
         // answer is wrong
-        timeLeft -= 10;
-        answerIsWrong();
-        totalScores.innerHTML = "Your Score: " + score;
+        if (timeLeft > 0) {
+            timeLeft -= 10;
+            answerIsWrong();
+            totalScores.innerHTML = "Your Score: " + score;
+        }
+
     }
 
     if (quesLeft < lastQues) {
@@ -105,7 +126,7 @@ function setTime() {
     let timerInterval = setInterval(function () {
         timerCountDown.textContent = "Time: " + timeLeft;
         timeLeft--;
-        if (timeLeft === 0) {
+        if (timeLeft === 0 || timeLeft<0) {
             clearInterval(timerInterval);
             timerCountDown.textContent = "TIMES UP \u23F0";
             qAbox.setAttribute("style", "display:none");
