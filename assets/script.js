@@ -10,6 +10,11 @@ let totalScores= document.querySelector(".totalScore");
 let qAbox = document.querySelector(".qAbox");
 let form = document.querySelector(".form");
 let initialName = document.querySelector(".formInput");
+let viewHighscore = document.querySelector(".viewHighschores");
+let storageInfo = document.querySelector(".storageInfo");
+let saveScore = document.querySelector(".saveScore");
+let playAgain = document.querySelector(".reload");
+let resetHighscore = document.querySelector(".reset");
 
 let questions = [
     {
@@ -34,7 +39,7 @@ let questions = [
 ];
 
 
-let timeLeft = 5;
+let timeLeft = 60;
 let score =0;
 let quesLeft =0;
 let lastQues = questions.length -1;
@@ -109,9 +114,30 @@ function setTime() {
 function saveLastScore(){
     let highScore={
         score: score,
-        initial: 
+        initial: initialName.value,
     }
+    localStorage.setItem("highScore", JSON.stringify(highScore));
 }
 
 
+
+function viewLastHighscore(){
+    let lastScore = JSON.parse(localStorage.getItem("highScore"));
+    storageInfo.innerHTML = lastScore.initial +": "+lastScore.score;
+    
+}
+
+function clearStorage(){
+    location.reload();
+}
+
+function clearHighScoreInStorage(){
+    storageInfo.innerHTML ="";
+    localStorage.clear();
+}
+
+playAgain.addEventListener("click",clearStorage)
+resetHighscore.addEventListener("click", clearHighScoreInStorage);
+saveScore.addEventListener("click", saveLastScore);
+viewHighscore.addEventListener('click', viewLastHighscore);
 startBtn.addEventListener("click", startQuiz);
