@@ -28,3 +28,7 @@ main{
 .mcqContainer{
     display: block;
 }
+
+.form{
+    display: none;
+}

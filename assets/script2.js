@@ -7,6 +7,9 @@ let choiceA = document.getElementById("A");
 let choiceB = document.getElementById("B");
 let choiceC = document.getElementById("C");
 let totalScores= document.querySelector(".totalScore");
+let qAbox = document.querySelector(".qAbox");
+let form = document.querySelector(".form");
+let initialName = document.querySelector(".formInput");
 
 let questions = [
     {
@@ -30,6 +33,8 @@ let questions = [
     }
 ];
 
+
+let timeLeft = 5;
 let score =0;
 let quesLeft =0;
 let lastQues = questions.length -1;
@@ -60,8 +65,9 @@ function checkAnswer(answer){
         totalScores.innerHTML ="Your Score: "+score;
     }else{
         // answer is wrong
-        
+        timeLeft-=10;
         answerIsWrong();
+        totalScores.innerHTML ="Your Score: "+score;
     }
     
     if(quesLeft < lastQues){
@@ -70,6 +76,8 @@ function checkAnswer(answer){
     }else{
         // end the quiz and show the score
         timerCountDown.setAttribute("style","display:none");
+        qAbox.setAttribute("style","display:none");
+        form.setAttribute("style","display:block");
     }
 }
 
@@ -84,15 +92,26 @@ function startQuiz(){
 
 
 function setTime() {
-    let timeLeft = 60;
+    
     let timerInterval = setInterval(function () {
         timerCountDown.textContent = "Time: " + timeLeft;
         timeLeft--;
         if (timeLeft === 0) {
             clearInterval(timerInterval);
             timerCountDown.textContent = "TIMES UP \u23F0";
+            qAbox.setAttribute("style","display:none");
+            form.setAttribute("style","display:block");
+            totalScores.innerHTML ="Your Score: "+score;
         }
     }, 1000)
 }
+
+function saveLastScore(){
+    let highScore={
+        score: score,
+        initial: 
+    }
+}
+
 
 startBtn.addEventListener("click", startQuiz);

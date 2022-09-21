@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,9 +9,12 @@
     <link rel="stylesheet" href="assets/reset.css">
     <link rel="stylesheet" href="assets/style.css">
 </head>
+
 <body>
     <header>
-        <h2 class="viewHighschores">View Highschores</h2>
+        <div>
+            <h2 class="viewHighschores">View Highschores</h2>
+        </div>
         <h2 class="timer">Time: </h2>
     </header>
 
@@ -22,25 +26,36 @@
             <div class="qAbox">
                 <div class="question">
                     <h2 class="qus"></h2>
-                </div> 
+                </div>
                 <div class="mCqs">
                     <div class="choice" id="A" onclick="checkAnswer('A')"></div>
                     <div class="choice" id="B" onclick="checkAnswer('B')"></div>
                     <div class="choice" id="C" onclick="checkAnswer('C')"></div>
                 </div>
-                
-                <div >
+
+                <div>
                     <h2 class="rightWrong"></h2>
                 </div>
             </div>
-            
 
-            <div >
+
+            <div>
                 <h2 class="totalScore"></h2>
             </div>
+
+            <div class="form">
+                <h2 class="message"></h2>
+                <form id="form">
+                    <label>Initial: <input type="text"  class="formInput"/></label>
+                    <br /><br />
+                    <button type="submit">Submit</button>
+                </form>
+                <button class="reload">play again</button>
+            </div>
         </section>
-        
+
     </main>
     <script src="assets/script2.js"></script>
 </body>
+
 </html>
