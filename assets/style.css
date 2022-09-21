@@ -1,12 +1,16 @@
+
+/* sets color for the whole document and text. */
 *{
     background-color: black; 
     color: white;   
 }
+
+/* removes the form */
 .form{
     display: none;
 }
 
-
+/* sets attribut for the header */
 header{
     display: flex;
     flex-wrap: wrap;
@@ -14,6 +18,8 @@ header{
     justify-content: center;
     /* align-items: center; */
 }
+
+/* sets attribut for the header heading*/
 header h1{
     text-align: center;
     background-color: rgb(65, 45, 70);
@@ -25,6 +31,7 @@ header h1{
     
 }
 
+/* sets attribut for the view score button */
 header #viewHighschores{
     /* border: 1px solid red; */
     text-align: left;
@@ -51,6 +58,7 @@ header .viewHighschores{
     box-shadow: inset 0px 0px 8px rgb(255, 30, 0), 0 0 15px rgb(252, 0, 0);
 }
 
+/* sets attriburte for the time */
 header .timer{
     /* border: 1px solid red; */
     text-align: center;
@@ -63,6 +71,7 @@ header .timer{
     color: rgb(255, 0, 200);
 }
 
+/* sets attribute for the start button */
 .startBtn{
     border-radius: 5px;
     font-size: 5vh;
@@ -74,6 +83,7 @@ header .timer{
     color: black;
 }
 
+/* sets attribut for the main body */
 main{
     display: flex;
     flex-wrap: wrap;
@@ -81,6 +91,7 @@ main{
     margin-top: 20vh;
 }
 
+/* sets attribut for the questions and its choices */
 .qAbox{
     display: none;
 }
@@ -137,12 +148,14 @@ main{
     margin-top: 5vh;
 }
 
+/* sets attribut for the score */
 .totalScore{
     text-align: center;
     color: aqua;
     margin-bottom: 5vh;
 }
 
+/* sets attribut for the submit form for user name */
 .form{
     text-align: center;
 }
@@ -159,6 +172,7 @@ main{
     margin-right: 1vh;
 }
 
+/* sets attribut for the buttons in the form*/
 .viewHighschore{
     margin-left: 1vh;
     margin-right: 1vh;

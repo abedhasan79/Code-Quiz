@@ -16,6 +16,8 @@ let saveScore = document.querySelector(".saveScore");
 let playAgain = document.querySelector(".reload");
 let resetHighscore = document.querySelector(".reset");
 
+
+//questions and their choises for the quiz
 let questions = [
     {
         question: "What does HTML stand for?",
@@ -62,25 +64,29 @@ let score = 0;
 let quesLeft = 0;
 let lastQues = questions.length - 1;
 
+// sets questions for the quiz everytime a question is answered
 function setQuestion() {
-    let q = questions[quesLeft];
-    questionChoice.innerHTML = "<h2>" + q.question + "</h2>";
-    choiceA.innerHTML = "1. " + q.choiceA;
-    choiceB.innerHTML = "2. " + q.choiceB;
-    choiceC.innerHTML = "3. " + q.choiceC;
+    let qAs = questions[quesLeft];
+    questionChoice.innerHTML = "<h2>" + qAs.question + "</h2>";
+    choiceA.innerHTML = "1. " + qAs.choiceA;
+    choiceB.innerHTML = "2. " + qAs.choiceB;
+    choiceC.innerHTML = "3. " + qAs.choiceC;
 }
 
+//check if answer is correct
 function answerIsCorrect() {
     rightWrong.innerHTML = "Correct Answer";
     rightWrong.setAttribute("style", "color:green");
 }
 
-
+//checks if the answer is wrong
 function answerIsWrong() {
     rightWrong.innerHTML = "Wrong Answer"
     rightWrong.setAttribute("style", "color:red");
 }
 
+//check answers to the questions. updates score if anser is right or wrong and 
+// reduces time by 10 second if a answer is wrong
 function checkAnswer(answer) {
     if (answer == questions[quesLeft].correct) {
         // answer is correct
@@ -97,7 +103,7 @@ function checkAnswer(answer) {
         }
 
     }
-
+    // if more question left go to the next question.
     if (quesLeft < lastQues) {
         quesLeft++;
         setQuestion();
@@ -110,9 +116,8 @@ function checkAnswer(answer) {
     }
 }
 
-
-
-
+// this function is being triggered after the start button is clicked.
+// kicks off the quiz.
 function startQuiz() {
     startBtn.setAttribute("style", "display:none");
     qAbox.setAttribute("style", "display:block")
@@ -120,7 +125,7 @@ function startQuiz() {
     setQuestion();
 }
 
-
+//sets the time interval
 function setTime() {
 
     let timerInterval = setInterval(function () {
@@ -136,6 +141,7 @@ function setTime() {
     }, 1000)
 }
 
+// save the total score of a user to the local storage
 function saveLastScore() {
     let highScore = {
         score: score,
@@ -145,7 +151,8 @@ function saveLastScore() {
 }
 
 
-
+// gets the stored values from the local storage and displays them on clicking
+// the view high score button
 function viewLastHighscore() {
     let lastScore = JSON.parse(localStorage.getItem("highScore"));
     storageInfo.setAttribute("style", "display:block");
@@ -161,17 +168,28 @@ function viewLastHighscore() {
 
 }
 
-function clearStorage() {
+// rests to default. keeps score unless clear highscore button is triggered
+function playAgainRefresh() {
     location.reload();
 }
 
+//clears local storage.
 function clearHighScoreInStorage() {
     storageInfo.innerHTML = "";
     localStorage.clear();
 }
 
-playAgain.addEventListener("click", clearStorage)
+//event listeners for button to play again.
+playAgain.addEventListener("click", playAgainRefresh)
+
+//event listeners for button to clear local storage.
 resetHighscore.addEventListener("click", clearHighScoreInStorage);
+
+//event listeners for button to save sore of a user when submitted.
 saveScore.addEventListener("click", saveLastScore);
+
+//event listeners for button to view high score.
 viewHighscoreBtn.addEventListener('click', viewLastHighscore);
+
+//event listeners for button to start the quiz.
 startBtn.addEventListener("click", startQuiz);
