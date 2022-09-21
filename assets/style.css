@@ -96,6 +96,13 @@ main{
     display: none;
 }
 
+@media screen and (max-width: 321px) {
+    body{
+        display:inline-flex;
+        flex-direction: column;
+    }
+}
+
 .qAbox #A{
     margin-top: 1vh;
     margin-bottom: 1vh;
@@ -188,3 +195,4 @@ main{
     color: black;
     cursor: pointer;
 }
+
