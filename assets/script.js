@@ -91,7 +91,6 @@ function checkAnswer(answer) {
     if (answer == questions[quesLeft].correct) {
         // answer is correct
         score++;
-
         answerIsCorrect();
         totalScores.innerHTML = "Your Score: " + score;
     } else {
@@ -101,7 +100,6 @@ function checkAnswer(answer) {
             answerIsWrong();
             totalScores.innerHTML = "Your Score: " + score;
         }
-
     }
     // if more question left go to the next question.
     if (quesLeft < lastQues) {
