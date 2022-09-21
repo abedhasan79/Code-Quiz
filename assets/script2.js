@@ -6,7 +6,7 @@ let rightWrong = document.querySelector(".rightWrong");
 let choiceA = document.getElementById("A");
 let choiceB = document.getElementById("B");
 let choiceC = document.getElementById("C");
-let highSchores= document.querySelector("viewHighschores");
+let totalScores= document.querySelector(".totalScore");
 
 let questions = [
     {
@@ -30,6 +30,7 @@ let questions = [
     }
 ];
 
+let score =0;
 let quesLeft =0;
 let lastQues = questions.length -1;
 
@@ -51,31 +52,29 @@ function answerIsWrong(){
 }
 
 function checkAnswer(answer){
-    if( answer == questions[runningQuestion].correct){
+    if( answer == questions[quesLeft].correct){
         // answer is correct
         score++;
-        // change progress color to green
+        
         answerIsCorrect();
+        totalScores.innerHTML ="Your Score: "+score;
     }else{
         // answer is wrong
-        // change progress color to red
+        
         answerIsWrong();
     }
-    count = 0;
-    if(runningQuestion < lastQuestion){
-        runningQuestion++;
-        renderQuestion();
+    
+    if(quesLeft < lastQues){
+        quesLeft++;
+        setQuestion();
     }else{
         // end the quiz and show the score
-        clearInterval(TIMER);
-        showSchore();
+        timerCountDown.setAttribute("style","display:none");
     }
 }
 
 
-function showSchore(){
 
-}
 
 function startQuiz(){
     startBtn.setAttribute("style","display:none");
