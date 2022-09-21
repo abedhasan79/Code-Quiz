@@ -47,18 +47,20 @@ let lastQues = questions.length - 1;
 function setQuestion() {
     let q = questions[quesLeft];
     questionChoice.innerHTML = "<h2>" + q.question + "</h2>";
-    choiceA.innerHTML = q.choiceA;
-    choiceB.innerHTML = q.choiceB;
-    choiceC.innerHTML = q.choiceC;
+    choiceA.innerHTML = "1. "+ q.choiceA;
+    choiceB.innerHTML = "2. "+ q.choiceB;
+    choiceC.innerHTML = "3. "+ q.choiceC;
 }
 
 function answerIsCorrect() {
-    rightWrong.innerHTML = "Correct."
+    rightWrong.innerHTML = "Correct Answer";
+    rightWrong.setAttribute("style", "color:green");
 }
 
 
 function answerIsWrong() {
-    rightWrong.innerHTML = "Wrong."
+    rightWrong.innerHTML = "Wrong Answer"
+    rightWrong.setAttribute("style", "color:red");
 }
 
 function checkAnswer(answer) {
@@ -81,6 +83,7 @@ function checkAnswer(answer) {
     } else {
         // end the quiz and show the score
         timerCountDown.setAttribute("style", "display:none");
+        rightWrong.setAttribute("style", "display:none");
         qAbox.setAttribute("style", "display:none");
         form.setAttribute("style", "display:block");
     }
@@ -91,6 +94,7 @@ function checkAnswer(answer) {
 
 function startQuiz() {
     startBtn.setAttribute("style", "display:none");
+    qAbox.setAttribute("style", "display:block")
     setTime();
     setQuestion();
 }

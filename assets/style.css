@@ -2,34 +2,175 @@
     background-color: black; 
     color: white;   
 }
-
-.timer{
-    text-align: right;
-    margin-right: 15vh;
-    margin-left: 15vh;
+.form{
+    display: none;
 }
 
-#viewHighschores{
-    margin-top: 5vh;
-    margin-left: 15vh;
-    margin-right: 15vh;
+
+header{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    /* align-items: center; */
+}
+header h1{
+    text-align: center;
+    background-color: rgb(65, 45, 70);
+    padding-top: 2vh;
+    padding-bottom: 2vh;
+    padding-left: 15vh;
+    padding-right: 15vh;
+    /* width: fit-content; */
+    
+}
+
+header #viewHighschores{
+    /* border: 1px solid red; */
+    text-align: left;
+    padding-top: 2vh;
+    padding-bottom: 2vh;
+    padding-left: 15vh;
+    padding-right: 15vh;
+    align-items: left;
+}
+header .viewHighschores{
+    border-radius: 5px;
+    box-shadow:inset 3px 3px 3px 3px rgb(133, 43, 43);
+    text-align: left;
+    padding-top: 2vh;
+    padding-bottom: 2vh;
+    margin-bottom: 2vh;
+    align-items: left;
+}
+
+.viewHighschores:hover{
+    cursor: pointer;
+    background-color: bisque;
+    color: black;
+    box-shadow: inset 0px 0px 8px rgb(255, 30, 0), 0 0 15px rgb(252, 0, 0);
+}
+
+header .timer{
+    /* border: 1px solid red; */
+    text-align: center;
+    padding-top: 2vh;
+    padding-bottom: 2vh;
+    padding-left: 15vh;
+    padding-right: 15vh;
+    align-items: left;
+    font-size: 5vh;
+    color: rgb(255, 0, 200);
+}
+
+.startBtn{
+    border-radius: 5px;
+    font-size: 5vh;
+    box-shadow: inset 0px 0px 8px rgb(255, 30, 0), 0 0 15px rgb(252, 0, 0);
+}
+.startBtn:hover{
+    cursor: pointer;
+    background-color: bisque;
+    color: black;
 }
 
 main{
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    margin-top: 10vh;
+    margin-top: 20vh;
 }
 
-.startBtn{
-    margin-top: 10vh;
+.qAbox{
+    display: none;
 }
 
-.mcqContainer{
-    display: block;
+.qAbox #A{
+    margin-top: 1vh;
+    margin-bottom: 1vh;
+    padding-top: 1vh;
+    padding-bottom: 1vh;
+    background-color: rgb(194, 161, 207);
+    color: rgb(0, 22, 6);
+    font-size: 2vh;
+}
+.qAbox #A:hover{
+    box-shadow: inset 0px 0px 8px rgb(255, 30, 0), 0 0 15px rgb(252, 0, 0);
+    cursor: pointer;
+}
+.qAbox #B{
+    margin-top: 1vh;
+    margin-bottom: 1vh;
+    padding-top: 1vh;
+    padding-bottom: 1vh;
+    background-color: rgb(206, 207, 161);
+    color: rgb(0, 22, 6);
+    font-size: 2vh;
+}
+.qAbox #B:hover{
+    box-shadow: inset 0px 0px 8px rgb(255, 30, 0), 0 0 15px rgb(252, 0, 0);
+    cursor: pointer;
+}
+.qAbox #C{
+    margin-top: 1vh;
+    margin-bottom: 1vh;
+    padding-top: 1vh;
+    padding-bottom: 1vh;
+    background-color: rgb(172, 207, 161);
+    color: rgb(0, 22, 6);
+    font-size: 2vh;
+}
+.qAbox #C:hover{
+    box-shadow: inset 0px 0px 8px rgb(255, 30, 0), 0 0 15px rgb(252, 0, 0);
+    cursor: pointer;
+}
+.qAbox .question h2{
+    background-color: rgb(44, 8, 13);
+    color: rgb(255, 255, 255);
+    font-size: 5vh;
+}
+
+.rightWrong{
+    text-align: center;
+    border-bottom: 3px double ;
+    margin-bottom: 5vh;
+    margin-top: 5vh;
+}
+
+.totalScore{
+    text-align: center;
+    color: aqua;
+    margin-bottom: 5vh;
 }
 
 .form{
-    display: none;
+    text-align: center;
+}
+#form{
+    margin-bottom: 5vh;
+}
+#form label{
+    color: aqua;
+}
+
+#form input{
+    color: rgb(29, 1, 56);
+    background-color: antiquewhite;
+    margin-right: 1vh;
+}
+
+.viewHighschore{
+    margin-left: 1vh;
+    margin-right: 1vh;
+}
+
+.form button{
+    border-radius: 5px;
+    box-shadow: inset 0px 0px 8px rgb(240, 141, 128), 0 0 15px rgb(73, 55, 55);
+}
+
+.form button:hover{
+    background-color: blanchedalmond;
+    color: black;
+    cursor: pointer;
 }

@@ -12,8 +12,9 @@
 
 <body>
     <header>
+        <h1>Take a quiz on HTML CSS and Javascript to test your skill.</h1>
         <div id="viewHighschores">
-            <button class="viewHighschores viewHighschore">View Highschores</button>
+            <button class="viewHighschores viewHighschore">Click To See Highscores</button>
             <div class="storageInfo">
 
             </div>
@@ -23,24 +24,32 @@
 
     <main>
         <div>
-            <button class="startBtn">Start</button>
+            <button class="startBtn">Start Quiz</button>
         </div>
         <section class="mcqContainer">
             <div class="qAbox">
                 <div class="question">
-                    <h2 class="qus"></h2>
+                    <h2 id="ques" class="qus"></h2>
                 </div>
                 <div class="mCqs">
-                    <div class="choice" id="A" onclick="checkAnswer('A')"></div>
-                    <div class="choice" id="B" onclick="checkAnswer('B')"></div>
-                    <div class="choice" id="C" onclick="checkAnswer('C')"></div>
+                    <ol>
+                        <li>
+                            <div class="choice" id="A" onclick="checkAnswer('A')"></div>
+                        </li>
+                        <li>
+                            <div class="choice" id="B" onclick="checkAnswer('B')"></div>
+                        </li>
+                        <li>
+                            <div class="choice" id="C" onclick="checkAnswer('C')"></div>
+                        </li>
+                    </ol>
                 </div>
 
-                <div>
-                    <h2 class="rightWrong"></h2>
-                </div>
+                
             </div>
-
+            <div>
+                <h2 class="rightWrong"></h2>
+            </div>
 
             <div>
                 <h2 class="totalScore"></h2>
@@ -50,7 +59,7 @@
                 <h2 class="message"></h2>
                 <form id="form">
                     <label>Initial: <input type="text"  class="formInput"/></label>
-                    <br /><br />
+                    
                     <button type="submit" class="saveScore">Save Score</button>
                 </form>
                 <button class="reload">play again</button>
