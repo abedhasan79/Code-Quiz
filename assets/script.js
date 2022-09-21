@@ -11,6 +11,7 @@ let qAbox = document.querySelector(".qAbox");
 let form = document.querySelector(".form");
 let initialName = document.querySelector(".formInput");
 let viewHighscoreBtn = document.querySelector(".viewHighschore");
+let viewHighscoreBtn2 = document.querySelector(".viewHighschores");
 let storageInfo = document.querySelector(".storageInfo");
 let saveScore = document.querySelector(".saveScore");
 let playAgain = document.querySelector(".reload");
@@ -188,6 +189,7 @@ saveScore.addEventListener("click", saveLastScore);
 
 //event listeners for button to view high score.
 viewHighscoreBtn.addEventListener('click', viewLastHighscore);
+viewHighscoreBtn2.addEventListener('click', viewLastHighscore);
 
 //event listeners for button to start the quiz.
 startBtn.addEventListener("click", startQuiz);
