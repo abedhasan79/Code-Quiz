@@ -18,17 +18,22 @@
         <div>
             <button class="startBtn">Start</button>
         </div>
-        <section class="mCqs">
-            <!-- <h2 class="question">who is Abed?</h2>
-            <ul>
-                <li><input type="text" value="" readonly class="choice1"></li>
-                <li><input type="text" value="" readonly class="choice1"></li>
-                <li><input type="text" value="" readonly class="choice1"> </li>
-                <li><input type="text" value="" readonly class="choice1"></li>
-            </ul> -->
+        <section class="mcqContainer">
+            <div class="question">
+                <h2 class="qus"></h2>
+            </div> 
+            <div class="mCqs">
+                <div class="choice" id="A" onclick="checkAnswer('A')"></div>
+                <div class="choice" id="B" onclick="checkAnswer('B')"></div>
+                <div class="choice" id="C" onclick="checkAnswer('C')"></div>
+            </div>
+            
+            <div >
+                <h2 class="rightWrong"></h2>
+            </div>
         </section>
         
     </main>
-    <script src="assets/script.js"></script>
+    <script src="assets/script2.js"></script>
 </body>
 </html>

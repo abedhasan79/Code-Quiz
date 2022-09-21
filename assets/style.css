@@ -24,3 +24,7 @@ main{
 .startBtn{
     margin-top: 10vh;
 }
+
+.mcqContainer{
+    display: block;
+}
