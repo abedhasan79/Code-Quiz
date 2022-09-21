@@ -9,7 +9,7 @@
     margin-left: 15vh;
 }
 
-.viewHighschores{
+#viewHighschores{
     margin-top: 5vh;
     margin-left: 15vh;
     margin-right: 15vh;
@@ -19,6 +19,7 @@ main{
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    margin-top: 10vh;
 }
 
 .startBtn{
